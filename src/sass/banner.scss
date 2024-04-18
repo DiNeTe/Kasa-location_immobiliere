@@ -1,0 +1,43 @@
+.banner .banner-image {
+  width: 100%;
+  border-radius: 25px;
+  opacity: 0.6px;
+  text-align: center;
+  object-fit: cover;
+}
+
+.banner {
+  position: relative;
+  margin-bottom: 43px;
+  height: 223px;
+}
+
+.banner-image {
+height: 100%;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Assombris l'image en arrière-plan */
+  border-radius: 25px;
+}
+
+.quote {
+  position: absolute;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 223px;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  font-size: 48px;
+  font-weight: 700;
+  z-index: 1;
+}

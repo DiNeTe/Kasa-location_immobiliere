@@ -1,0 +1,12 @@
+.cards-container {
+    gap: 60px;
+    row-gap: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(246, 246, 246, 1);
+    border-radius: 25px;
+    padding: 56px 0 43px;
+    margin-bottom: 50px;
+}
