@@ -5,6 +5,7 @@ import AboutPage from "../views/AboutPage";
 import NotFoundPage from "../views/NotFoundPage";
 import { Routes, Route } from 'react-router-dom';
 
+// composant fonctionnel React
 const AppRouter: React.FC = () => {
   return (
       <Routes>

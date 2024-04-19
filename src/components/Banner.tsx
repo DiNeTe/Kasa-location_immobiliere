@@ -1,13 +1,20 @@
+import { ReactNode } from "react";
 import "../sass/banner.scss";
 
-const Banner = () => {
+type BannerProps = {
+  imageSrc: string;
+  imageAlt: string;
+  children ?: ReactNode;
+}
+// composant fonctionnel React
+const Banner: React.FC<BannerProps> = ({ imageSrc, imageAlt, children }) => {
   return (
     <div className="banner">
-      <blockquote className="quote">Chez vous, partout et ailleurs</blockquote>
+      <blockquote className="quote">{children}</blockquote>
       <img
         className="banner-image"
-        src="../../public/banner.jpg"
-        alt="banner"
+        src={imageSrc}
+        alt={imageAlt}
       />
     </div>
   );

@@ -1,10 +1,17 @@
-import React from "react";
 import Collapse from "../components/Collapse";
+import Banner from "../components/Banner";
 import "../sass/aboutPage.scss";
 
+// composant fonctionnel React
 const AboutPage: React.FC = () => {
   return (
-    <section className="collapse-container">
+    <div className="about-page">
+      <Banner
+        imageSrc="../../public/Banner-about.jpg"
+        imageAlt="Vue de la page À Propos"
+      >
+      </Banner>
+      <section className="collapse-container">
         <Collapse title="Fiabilité">
           <p>
             Les annonces postées sur Kasa garantissent une fiabilité totale. Les
@@ -37,7 +44,8 @@ const AboutPage: React.FC = () => {
             ateliers sur la sécurité domestique pour nos hôtes.
           </p>
         </Collapse>
-    </section>
+      </section>
+    </div>
   );
 };
 

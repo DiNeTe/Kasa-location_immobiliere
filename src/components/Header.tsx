@@ -1,4 +1,5 @@
 import "../sass/header.scss";
+// variante de <Link> permet de naviguer entre les composants en réagissant à l'itinéraire actif
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -9,6 +10,7 @@ const Header = () => {
         <ul className="header-nav">
           <NavLink
             to="/"
+            // isActive = booléen, indique si le lien correspond à la route active
             className={({ isActive }) => (isActive ? "active-link" : undefined)}
           >
             Accueil
