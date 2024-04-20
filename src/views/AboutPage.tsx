@@ -1,6 +1,6 @@
 import Collapse from "../components/Collapse";
 import Banner from "../components/Banner";
-import "../sass/aboutPage.scss";
+// import "../sass/aboutPage.scss";
 
 // composant fonctionnel React
 const AboutPage: React.FC = () => {

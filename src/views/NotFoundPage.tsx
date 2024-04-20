@@ -1,4 +1,3 @@
-import "../sass/notFoundPage.scss";
 import { Link } from "react-router-dom";
 
 // composant fonctionnel React

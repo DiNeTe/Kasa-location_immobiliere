@@ -1,19 +1,18 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import HomePage from "../views/HomePage";
-import AccommodationSheet from "../views/AccommodationSheet";
+import AccommodationPage from "../views/AccommodationPage";
 import AboutPage from "../views/AboutPage";
 import NotFoundPage from "../views/NotFoundPage";
-import { Routes, Route } from 'react-router-dom';
 
 // composant fonctionnel React
 const AppRouter: React.FC = () => {
   return (
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Accommodation/:id" element={<AccommodationSheet />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/accommodation/:id" element={<AccommodationPage />} />      <Route path="/about" element={<AboutPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 };
 

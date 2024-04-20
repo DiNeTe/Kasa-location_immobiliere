@@ -1,7 +1,6 @@
 .collapse {
-  margin: 38px 108.5px ;
+  margin: 28px 108.5px;
   height: 100%;
-  // align-items: center;
 }
 
 .collapse-header {
@@ -26,6 +25,7 @@
 button.collapse-toggle {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .collapse-header img {
@@ -40,4 +40,14 @@ button.collapse-toggle {
   display: flex;
   flex-direction: column;
   padding-left: 15px;
+  overflow: hidden;
+  transition: max-height 0.5s, visibility 0.5s linear 0.5s;
+  max-height: 0;
+  visibility: hidden;
+}
+
+.collapse-body.visible {
+  max-height: 500px;
+  visibility: visible;
+  transition-delay: 0s;
 }

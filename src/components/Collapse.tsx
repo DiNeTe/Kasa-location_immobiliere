@@ -1,11 +1,9 @@
 import React, { useState, ReactNode } from "react";
-import "../sass/collapse.scss";
 
 type CollapseProps = {
   title: string;
   children: ReactNode;
 };
-
 // composant fonctionnel React
 const Collapse: React.FC<CollapseProps> = ({ title, children }) => {
   // Gestion de l'État // useState = Hook React, permet de gérer l'état local dans le FC
@@ -28,8 +26,10 @@ const Collapse: React.FC<CollapseProps> = ({ title, children }) => {
   )}
 </button>
       </div>
-      {/* apparaît que si isOpen est true. */}
-      {isOpen && <div className="collapse-body">{children}</div>}
+      {/* Utilise une classe CSS pour contrôler l'affichage */}
+      <div className={`collapse-body ${isOpen ? 'visible' : 'hidden'}`}>
+        {children}
+      </div>
     </div>
   );
 };

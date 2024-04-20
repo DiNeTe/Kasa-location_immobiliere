@@ -1,11 +1,13 @@
-import "../sass/header.scss";
 // variante de <Link> permet de naviguer entre les composants en réagissant à l'itinéraire actif
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="header">
+      <NavLink
+            to="/">
       <img src="../../public/logoKasa.svg" alt="Kasa" className="header-logo" />
+      </NavLink>
       <nav>
         <ul className="header-nav">
           <NavLink
