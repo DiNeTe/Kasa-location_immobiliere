@@ -3,16 +3,17 @@ import React, { useState, ReactNode } from "react";
 type CollapseProps = {
   title: string;
   children: ReactNode;
+  className?: string;
 };
 // composant fonctionnel React
-const Collapse: React.FC<CollapseProps> = ({ title, children }) => {
+const Collapse: React.FC<CollapseProps> = ({ title, children,className }) => {
   // Gestion de l'État // useState = Hook React, permet de gérer l'état local dans le FC
   const [isOpen, setIsOpen] = useState(false);
   // inverse l'état de isOpen chaque fois que la fct toggle est appelé
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="collapse">
+    <div className={`collapse ${className || ''}`}>
       <div className="collapse-header">
         <div className="title-collapse">
         <span>{title}</span>

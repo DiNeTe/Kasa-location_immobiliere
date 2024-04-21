@@ -12,6 +12,7 @@ const AppRouter: React.FC = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/accommodation/:id" element={<AccommodationPage />} />      <Route path="/about" element={<AboutPage />} />
       <Route path="*" element={<NotFoundPage />} />
+      <Route path="/accommodation/not-found" element={<NotFoundPage />} />
     </Routes>
   );
 };
