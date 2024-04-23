@@ -7,9 +7,18 @@
   justify-content: center;
   padding-top: 60px;
   box-sizing: border-box;
+  margin: 0 -100px;
+  @media (max-width: 375px){
+    padding: 0;
+    text-align: center;
+    margin: 0 -20px;
+  }
 }
 
 .footer span {
   color: white;
   margin-top: 28.56px;
+  @media (max-width: 375px){
+    width: 60%;
+  }
 }

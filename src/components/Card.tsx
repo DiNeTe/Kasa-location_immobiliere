@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = ({ id, title, cover, onClick}) => {
     <div className="cards" onClick={onClick}>
       <Link to={`/Accommodation/${id}`}>
         <img src={cover} alt={title} />
-        <h2>{title}</h2>
+        <h2 className="title-card">{title}</h2>
       </Link>
     </div>
   );

@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 // composant fonctionnel React
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
-
   // Fonction pour gérer le clic sur une carte
   const CardClick = (id: string) => {
     // navigues vers la page de détail de l'hébergement

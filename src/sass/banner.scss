@@ -9,7 +9,10 @@
 .banner {
   position: relative;
   height: 223px;
-  margin-top : 50px; 
+  margin-top: 50px;
+  @media (max-width: 375px) {
+    margin-top: 7px;
+  }
 
   &::after {
     content: "";
@@ -37,7 +40,10 @@
   margin: 0;
   text-align: center;
   display: flex;
-  font-size: 48px;
+  font-size: 2em;
   font-weight: 700;
   z-index: 1;
+  @media (max-width: 955px) {
+    font-size: 1.5em;
+  }
 }

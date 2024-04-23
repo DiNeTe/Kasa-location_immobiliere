@@ -1,3 +1,6 @@
 .collapse-container {
-    margin: 10px 0;
+  margin: 38px 0;
+  @media (max-width: 375px) {
+    margin: 20px 0;
+  }
 }

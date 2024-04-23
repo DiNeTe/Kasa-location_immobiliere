@@ -1,7 +1,7 @@
 .acommodation-page {
   display: flex;
   flex-direction: column;
-  padding: 0 100px;
+  // padding: 0 100px;
   .accomodation-img {
     margin: 50px 0 30px;
   }
@@ -11,10 +11,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 375px) {
+    flex-direction: column;
+  }
 
   .accommadation-info {
     display: flex;
     flex-direction: column;
+    @media (max-width: 375px) {
+      // flex-direction: row-reverse;
+    }
 
     .name {
       font-size: 36px;
@@ -48,15 +54,16 @@
   }
 }
 
-
-
 .profile-card {
   display: flex;
   flex-direction: column;
+  @media (max-width: 375px) {
+    flex-direction: row-reverse;
+  }
   .profile-info {
     display: flex;
     flex-direction: row;
-    .fullname{
+    .fullname {
       display: flex;
       flex-direction: column;
       color: rgba(255, 96, 96, 1);
@@ -105,22 +112,37 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 50px;
+  @media (max-width: 375px) {
+    flex-direction: column;
+    margin: 13px 0 27px;
+    gap: 20px;
+
+  }
   .collapse {
     width: 50%;
     margin: 0;
+    @media (max-width: 375px) {
+      width: 100%;
+    }
   }
+
+  
+
   .collapse-description {
     margin-right: 38px;
-    .collapse-header {
-      border-radius: 10px;
-    }
-    
+    border-radius: 10px;
   }
   .collapse-equipments {
+    border-radius: 10px;
     margin-left: 38px;
-    .collapse-header {
-      border-radius: 10px;
-    }
-
+    @media (max-width: 375px) {
+      margin-left: 0;
   }
+  .collapse-header {
+    // border-radius: 10px;
+    @media (max-width: 375px) {
+    }
+  }
+}
 }

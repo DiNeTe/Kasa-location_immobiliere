@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 type SlideshowProps = {
-  images: string[]; // Doit être un tableau de chaînes
+  images: string[];
 };
 
 const SlideShow: React.FC<SlideshowProps> = ({ images }) => {
@@ -23,10 +23,10 @@ const SlideShow: React.FC<SlideshowProps> = ({ images }) => {
     <div className="slideshow-container">
       <div className="nav-btn">
         <button className="prev-btn" onClick={goToPrevious}>
-          <img src="/gotoprev.svg" alt="Previous" />
+          <img className="nav-slideshow" src="/gotoprev.svg" alt="Previous" />
         </button>
         <button className="next-btn" onClick={goToNext}>
-          <img src="/gotonext.svg" alt="Next" />
+          <img className="nav-slideshow" src="/gotonext.svg" alt="Next" />
         </button>
       </div>
       <img
