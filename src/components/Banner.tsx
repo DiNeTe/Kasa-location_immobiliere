@@ -12,10 +12,10 @@ const Banner: React.FC<BannerProps> = ({ imageSrc, imageAlt, children }) => {
   );
 
   return (
-    <div className="banner">
+    <h1 className="banner">
       {quote}
       <img className="banner-image" src={imageSrc} alt={imageAlt} />
-    </div>
+    </h1>
   );
 };
 

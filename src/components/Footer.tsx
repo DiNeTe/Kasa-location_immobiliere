@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="footer">
       <img
         src="../../public/logoKasaWhite.svg"
-        alt="Kasa"
+        alt="Logo Kasa"
         className="logoKasaWhite"
       />
       <span> © 2020 Kasa. All rights reserved </span>

@@ -1,11 +1,11 @@
 type TagProps = {
-  tags: string;
+  tag: string;
 };
 
-const Tag: React.FC<TagProps> = ({ tags }) => {
+const Tag: React.FC<TagProps> = ({ tag }) => {
   return (
     <div className="tag">
-      <span> {tags} </span>
+      <span> {tag} </span>
     </div>
   );
 };

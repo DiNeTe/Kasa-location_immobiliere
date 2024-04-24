@@ -7,7 +7,9 @@ const App: React.FC = () => {
   return (
     <>
       <div className="app">
+        <header>
         <Header />
+        </header>
         <main>
           <AppRouter />
         </main>
