@@ -1,7 +1,7 @@
 import data from "./listings.json";
 import { dataType } from "./Types.tsx";
 
-const dataInterface = async (): Promise<dataType[]> => {
+const loadData = async (): Promise<dataType[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       // Simule un appel réseau
@@ -10,7 +10,7 @@ const dataInterface = async (): Promise<dataType[]> => {
   });
 };
 
-// const dataInterface = async (): Promise<dataType[]> => {
+// const loadData = async (): Promise<dataType[]> => {
 //   try {
 //     const response = await fetch("URL API");
 //     if (!response.ok)
@@ -24,4 +24,4 @@ const dataInterface = async (): Promise<dataType[]> => {
 //     return [];
 //   }}
 
-export default dataInterface;
+export default loadData;

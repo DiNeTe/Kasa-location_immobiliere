@@ -5,34 +5,36 @@ type SlideshowProps = {
 };
 
 const SlideShow: React.FC<SlideshowProps> = ({ images }) => {
-  // Déstructuration de props
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // variable d'état avec la valeur initiale définie à 0
+  const [ImageIndex, setImageIndex] = useState(0);
 
   const goToPrevious = () => {
-    setCurrentImageIndex((prevIndex) =>
+    setImageIndex((prevIndex) =>
+      // Si l'indice actuel est supérieur à 0, l'indice diminu de 1, sinon retour à la dernière image du tableau, crée l'effet de boucle.
       prevIndex > 0 ? prevIndex - 1 : images.length - 1
     );
   };
 
   const goToNext = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setImageIndex((nextIndex) => 
+      // Si nextIndex + 1 égale images.length, alors modulo = 0, crée l'effet de boucle.
+      (nextIndex + 1) % images.length);
   };
 
-  // Le return avec le JSX doit être ici
   return (
     <div className="slideshow-container">
       <div className="nav-btn">
         <button className="prev-btn" onClick={goToPrevious}>
-          <img className="nav-slideshow" src="/gotoprev.svg" alt="Previous" />
+          <img className="nav-slideshow" src="/gotoprev.svg" alt="Image précédente" />
         </button>
         <button className="next-btn" onClick={goToNext}>
-          <img className="nav-slideshow" src="/gotonext.svg" alt="Next" />
+          <img className="nav-slideshow" src="/gotonext.svg" alt="Image suivante" />
         </button>
       </div>
       <img
         className="slideshow-image"
-        src={images[currentImageIndex]}
-        alt={`Slide ${currentImageIndex}`}
+        src={images[ImageIndex]}
+        alt={`Photo n°: ${ImageIndex}`}
       />
     </div>
   );

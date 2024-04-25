@@ -1,8 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-import DataInterface  from '../data/Interface.tsx';
-import { dataType } from '../data/Types'
+import LoadData from "../data/LoadData.tsx";
+import { dataType } from "../data/Types";
 
 import Collapse from "../components/Collapse";
 import Tag from "../components/Tag";
@@ -21,9 +21,11 @@ const accomodationPage = () => {
     (async () => {
       try {
         // Attend la résolution de la promesse pour obtenir les données
-        const dataInterface = await DataInterface();
-        // Cherche l'hébergement correspondant à l'ID
-        const foundAccommodation = dataInterface.find((acc) => acc.id === id);
+        const dataInterface = await LoadData();
+        // Cherche l'hébergement correspondant à l'ID recuperé avec useParams
+        const foundAccommodation = dataInterface.find(
+          (listing) => listing.id === id
+        );
         if (foundAccommodation) {
           // met à jour l'état avec les données de l'hébergement
           setlistings(foundAccommodation);
@@ -81,11 +83,11 @@ const accomodationPage = () => {
             </div>
             <img
               src={listings.host.picture}
-              alt={`Picture of ${listings.host.name}`}
+              alt={`Photo de ${listings.host.name}`}
             />
           </div>
           <div className="rating">
-            <RatingStars rating={(listings.rating)} />
+            <RatingStars rating={listings.rating} />
           </div>
         </section>
       </section>

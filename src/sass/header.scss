@@ -1,19 +1,24 @@
+@use './mixins.scss' as *;
+
 .header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 45px;
-  @media (max-width: 955px) {
+
+  @include respond-to(medium) {
     margin: 20px 0;
     width: auto;
   }
-  @media (max-width: 300px) {
+
+  @include respond-to(very-small) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .header-logo {
-    @media (max-width: 955px) {
+    @include respond-to(medium) {
       height: 37.46px;
       width: auto;
       margin: 0;
@@ -26,11 +31,20 @@
   gap: 57px;
   font-weight: 500;
   line-height: 34.22px;
-  @media (max-width: 955px) {
+
+  @include respond-to(small) {
     gap: 26px;
     font-size: 12px;
     padding: 0;
   }
+
+  @include respond-to(medium) {
+    gap: 26px;
+    font-size: 18px;
+    padding: 0;
+  }
+
+  
 }
 
 a,

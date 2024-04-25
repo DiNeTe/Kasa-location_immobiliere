@@ -1,3 +1,5 @@
+@use './mixins.scss' as *;
+
 .banner .banner-image {
   width: 100%;
   border-radius: 25px;
@@ -10,10 +12,10 @@
   position: relative;
   height: 223px;
   margin-top: 50px;
-  @media (max-width: 375px) {
+  @include respond-to(small) {
     margin-top: 7px;
+    height: 111px;
   }
-
   &::after {
     content: "";
     position: absolute;
@@ -24,26 +26,24 @@
     background: rgba(0, 0, 0, 0.4); /* Assombris l'image en arrière-plan */
     border-radius: 25px;
   }
-}
-
-.banner-image {
-  height: 100%;
-}
-
-.quote {
-  position: absolute;
-  color: white;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 223px;
-  margin: 0;
-  text-align: center;
-  display: flex;
-  font-size: 2em;
-  font-weight: 700;
-  z-index: 1;
-  @media (max-width: 955px) {
-    font-size: 1.5em;
+  .quote {
+    position: absolute;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    font-size: 1em;
+    font-weight: 700;
+    z-index: 1;
+    @include respond-to(small) {
+      font-size: 0.5em;
+    }
+  }
+  .banner-image {
+    height: 100%;
   }
 }

@@ -1,20 +1,20 @@
 import { useNavigate } from "react-router-dom";
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import DataInterface  from "../data/Interface.tsx";
+import DataInterface from "../data/LoadData.tsx";
 import { dataType } from "../data/Types";
 
 import Card from "../components/Card";
 import Banner from "../components/Banner";
 
-
-// composant fonctionnel React
+// logique du composant fonctionnel React
 const HomePage: React.FC = () => {
   // Hook de navigation
   const navigate = useNavigate();
   // Déclare un état pour stocker les listes d'hébergements, initialisé à un tableau vide
   const [listings, setListings] = useState<dataType[]>([]);
 
+  // hook pour effectuer des effets de bord
   useEffect(() => {
     // Fonction asynchrone pour récupérer les données des hébergements
     async function dataAccommodation() {
@@ -24,11 +24,12 @@ const HomePage: React.FC = () => {
         // Met à jour l'état listings avec les données récupérées
         setListings(dataInterface);
       } catch (error) {
-        console.error("erreur de recupération des données:", error);
+        console.error("erreur lors de la recupération des données:", error);
       }
     }
     // Appelle la fonction dataAccommodation
     dataAccommodation();
+    // garantit que dataAccommodation est appelée une seule fois juste après que le composant a été monté, évitant ainsi des appels répétés
   }, []);
 
   // Fonction pour gérer le clic sur une carte
@@ -37,9 +38,8 @@ const HomePage: React.FC = () => {
     navigate(`/accommodation/${id}`);
   };
 
-// Rendu principal du composant
+  // Rendu principal du composant
   return (
-
     <div className="home-page">
       <Banner
         imageSrc="../../public/Banner.jpg"
@@ -52,11 +52,8 @@ const HomePage: React.FC = () => {
         {listings.map((listing) => (
           <Card
             key={listing.id}
-            id={listing.id}
-            cover={listing.cover}
-            title={listing.title}
+            data={listing}
             onClick={() => CardClick(listing.id)}
-            imageAlt={`Image de l'hébèrgement : ${listing.title}`}
           />
         ))}
       </div>

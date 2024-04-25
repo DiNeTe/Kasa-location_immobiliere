@@ -1,3 +1,5 @@
+@use './mixins.scss' as *;
+
 .cards-container {
   gap: 60px;
   width: 100%;
@@ -11,7 +13,8 @@
   padding: 56px 0 43px;
   margin-bottom: 50px;
   margin-top: 43px;
-  @media (max-width: 955px) {
+  
+  @include respond-to(medium) {
     gap: 20px;
     background: none;
     margin: 22px 0;
@@ -27,6 +30,10 @@
 
   .title-card {
     background: rgba(111, 111, 111, 0.4);
+    height: 16.5%;
+    @include respond-to(small) {
+      height: 23%;
+    }
   }
 
   h2 {

@@ -1,3 +1,5 @@
+@use "./mixins.scss" as *;
+
 .cards {
   height: 340px;
   width: 340px;
@@ -5,24 +7,30 @@
   position: relative;
   transition: background 0.3s;
   cursor: pointer;
-  @media (max-width: 955px) {
+
+  @include respond-to(medium) {
     width: 100%;
   }
-  @media (max-width: 374px) {
+  
+  @include respond-to(small) {
     height: 255px;
     width: 335px;
+  }
   
-
+  &:hover {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.363);
+      border-radius: 10px;
+    }
+    // Désactiver le background du titre lors du survol
+    .title-card {
+      background: transparent;
+    }
+  }
 }
-}
-
-.cards:hover::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    z-index: 1;}

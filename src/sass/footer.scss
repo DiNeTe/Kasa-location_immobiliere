@@ -1,3 +1,5 @@
+@use './mixins.scss' as *;
+
 .footer {
   display: flex;
   height: 209px;
@@ -8,7 +10,7 @@
   padding-top: 60px;
   box-sizing: border-box;
   margin: 0 -100px;
-  @media (max-width: 955px){
+  @include respond-to(medium){
     padding: 0;
     text-align: center;
     margin: 0 -20px;
@@ -18,7 +20,7 @@
 .footer span {
   color: white;
   margin-top: 28.56px;
-  @media (max-width: 955px){
+  @include respond-to(medium){
     width: 60%;
   }
 }
