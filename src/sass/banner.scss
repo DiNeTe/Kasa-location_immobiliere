@@ -1,9 +1,9 @@
-@use './mixins.scss' as *;
+@use "./mixins.scss" as *;
 
 .banner .banner-image {
   width: 100%;
   border-radius: 25px;
-  opacity: 0.6px;
+  opacity: 0.16px;
   text-align: center;
   object-fit: cover;
 }
@@ -23,7 +23,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Assombris l'image en arrière-plan */
+    background: rgba(0, 0, 0, 0.6); /* Assombris l'image en arrière-plan */
     border-radius: 25px;
   }
   .quote {
@@ -46,4 +46,8 @@
   .banner-image {
     height: 100%;
   }
+}
+
+.banner-about:after {
+  background: rgba(0, 0, 0, 0.3);
 }

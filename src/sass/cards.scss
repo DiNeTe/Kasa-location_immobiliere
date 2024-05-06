@@ -3,7 +3,6 @@
 .cards {
   height: 340px;
   width: 340px;
-  border-radius: 10px;
   position: relative;
   transition: background 0.3s;
   cursor: pointer;
@@ -28,7 +27,7 @@
       background: rgba(0, 0, 0, 0.363);
       border-radius: 10px;
     }
-    // Désactiver le background du titre lors du survol
+
     .title-card {
       background: transparent;
     }

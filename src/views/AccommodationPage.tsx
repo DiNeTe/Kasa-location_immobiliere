@@ -1,76 +1,59 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import LoadData from "../data/LoadData.tsx";
-import { dataType } from "../data/Types";
+import { Accommodation } from "../data/Accomodation";
 
 import Collapse from "../components/Collapse";
 import Tag from "../components/Tag";
 import RatingStars from "../components/Rating";
 import SlideShow from "../components/SlideShow";
+import { useAppDependencies } from "../app/context";
 
-// composant fonctionnel pour la page detail de l'hébèrgement
-const accomodationPage = () => {
-  // Récupère l'ID de l'hébergement
+const AccommodationPage: React.FC = () => {
+  // hook utilisé pour  obtenir l'id de l'hébergement.
   const { id } = useParams<{ id: string }>();
-  // Déclare un état pour stocker l'hébergement trouvé et un état pour le chargement
-  const [listings, setlistings] = useState<dataType | null>(null);
+  // Utilisation des dépendances de l'application pour récupérer les données
+  const { accommadationDataSource } = useAppDependencies();
+  const [accommodation, setAccommodation] = useState<Accommodation | undefined>(
+    undefined
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      try {
-        // Attend la résolution de la promesse pour obtenir les données
-        const dataInterface = await LoadData();
-        // Cherche l'hébergement correspondant à l'ID recuperé avec useParams
-        const foundAccommodation = dataInterface.find(
-          (listing) => listing.id === id
-        );
-        if (foundAccommodation) {
-          // met à jour l'état avec les données de l'hébergement
-          setlistings(foundAccommodation);
-        } else {
-          // Sinon, réinitialise l'état de l'hébergement
-          setlistings(null);
-        }
-      } catch (error) {
-        console.error("erreur de recupération des données:", error);
-        // Réinitialise l'état de l'hébergement en cas d'erreur
-        setlistings(null);
-        // Assure que l'indicateur de chargement est désactivé après le traitement
-      } finally {
-        setLoading(false);
-      }
-    })();
-    // Exécute l'effet quand l'ID change
+    async function init() {
+      setLoading(true);
+      const foundAccommodation = await accommadationDataSource.fetchOne(id!);
+      setAccommodation(foundAccommodation);
+      setLoading(false);
+    }
+    init();
   }, [id]);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  if (!listings) {
+  if (!accommodation) {
     return <Navigate to="/not-found" replace />;
   }
 
-  const hostFullName = listings.host.name.split(" ");
+  const hostFullName = accommodation.host.name.split(" ");
   const firstName = hostFullName[0];
   const lastName = hostFullName.slice(1).join(" ");
 
-  // Rendu principal du composant
   return (
     <div className="acommodation-page">
-      <SlideShow images={listings.pictures} />
+      <SlideShow images={accommodation.pictures} />
       <section className="accommodation-summary">
         <section className="accommadation-info">
           <div className="name">
-            <span>{listings.title}</span>
+            <span>{accommodation.title}</span>
           </div>
           <div className="location">
-            <span>{listings.location}</span>
+            <span>{accommodation.location}</span>
           </div>
           <div className="tag-section">
-            {listings.tags.map((tag, index) => (
+            {accommodation.tags.map((tag, index) => (
               <Tag key={index} tag={tag} />
             ))}
           </div>
@@ -82,22 +65,22 @@ const accomodationPage = () => {
               <span className="last-name">{lastName}</span>
             </div>
             <img
-              src={listings.host.picture}
-              alt={`Photo de ${listings.host.name}`}
+              src={accommodation.host.picture}
+              alt={"Photo de ${listing.host.name}"}
             />
           </div>
           <div className="rating">
-            <RatingStars rating={listings.rating} />
+            <RatingStars rating={accommodation.rating} />
           </div>
         </section>
       </section>
       <section className="collapse-section">
         <Collapse title="Description" className="collapse-description">
-          {listings.description}
+          <p className="collapse-content">{accommodation.description}</p>
         </Collapse>
         <Collapse title="Equipements" className="collapse-equipments">
-          <ul className="equipments">
-            {listings.equipments.map((equipment, index) => (
+          <ul className="collapse-content">
+            {accommodation.equipments.map((equipment, index) => (
               <li key={index}>{equipment}</li>
             ))}
           </ul>
@@ -107,4 +90,4 @@ const accomodationPage = () => {
   );
 };
 
-export default accomodationPage;
+export default AccommodationPage;

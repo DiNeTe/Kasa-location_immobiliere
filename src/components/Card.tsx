@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import React, { MouseEventHandler } from "react";
-import { dataType } from "../data/Types";
+import { Accommodation } from "../data/Accomodation";
 
 type CardProps = {
-  data: dataType;
+  data: Accommodation;
   onClick: MouseEventHandler<HTMLDivElement>;
 };
 
@@ -19,5 +19,3 @@ const Card: React.FC<CardProps> = ({ data, onClick }) => {
 };
 
 export default Card;
-
-// {/* <h2 className="title-card">{`Image de l'hébèrgement : ${data.title}`}</h2> */}

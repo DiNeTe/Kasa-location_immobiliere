@@ -9,8 +9,6 @@
 
   @include respond-to(medium) {
     margin: 0;
-    // display: flex;
-    // flex-direction: column;
     margin-bottom: 20px;
   }
 }
@@ -30,6 +28,7 @@ ul {
   border: none;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .title-collapse {
@@ -43,15 +42,11 @@ button.collapse-toggle {
   border: none;
   cursor: pointer;
   padding: 0;
-  // width: 24px;
+  display: contents;
 }
 
 .collapse-header img {
-  // width: 24px;
   height: 100%;
-  // @include respond-to(small) {
-  //   margin-right: 12px;
-  // }
 }
 
 .collapse-body {
@@ -60,9 +55,10 @@ button.collapse-toggle {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: max-height 0.5s, visibility 0.5s linear 0.5s;
+  transition: max-height 0.2s, visibility 0.2s linear;
   max-height: 0;
   visibility: hidden;
+  // padding: 2%;
   @include respond-to(medium) {
     margin: 0;
   }
@@ -72,11 +68,18 @@ button.collapse-toggle {
   max-height: 500px;
   visibility: visible;
   transition-delay: 0s;
-  padding: 4%;
+  transition: max-height 0.5s, visibility 0.2s linear 0.3s;
+
 }
 
 .collapse-body.hidden {
   @include respond-to(medium) {
-    padding: 0;
+    padding: 2%;
+    overflow: hidden;
   }
+}
+
+.collapse-content {
+  padding: 2%;
+  margin: 0;
 }

@@ -1,4 +1,4 @@
-export interface dataType {
+export interface Accommodation {
   id: string;
   title: string;
   cover: string;

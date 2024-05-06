@@ -3,11 +3,11 @@ type RatingProps = {
 };
 
 const RatingStars: React.FC<RatingProps> = ({ rating }) => {
-  // Convertis la note en nombre
+  // Converti la note en nombre
   const ratingNumber = Number(rating);
   // Crée un tableau pour les étoiles pleines, basé sur la note
   const fullStars = Array(ratingNumber).fill("★");
-  // Crée un tableau pour les étoiles vides, basé sur la différence entre la note et la note maximale (5 étoiles par exemple)
+  // Crée un tableau pour les étoiles vides, basé sur la différence entre la note et la note maximale
   const emptyStars = Array(5 - ratingNumber).fill("☆");
   return (
     <div className="rating">

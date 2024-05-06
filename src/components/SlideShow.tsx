@@ -17,7 +17,7 @@ const SlideShow: React.FC<SlideshowProps> = ({ images }) => {
 
   const goToNext = () => {
     setImageIndex((nextIndex) => 
-      // Si nextIndex + 1 égale images.length, alors modulo = 0, crée l'effet de boucle.
+      // Si nextIndex + 1 = images.length, alors modulo = 0, crée l'effet de boucle.
       (nextIndex + 1) % images.length);
   };
 

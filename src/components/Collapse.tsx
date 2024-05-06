@@ -14,12 +14,12 @@ const Collapse: React.FC<CollapseProps> = ({ title, children,className }) => {
 
   return (
     <div className={`collapse ${className || ''}`}>
-      <div className="collapse-header">
+      <div className="collapse-header" onClick={toggle}>
         <div className="title-collapse">
         <span>{title}</span>
         </div>
         {/* déclenche la fonction toggle lorsqu'il est cliqué. */}
-        <button onClick={toggle} className="collapse-toggle">
+        <button  className="collapse-toggle">
         {isOpen ? (
     <img src="../../public/arrow-down.svg" alt="Expand" />
   ) : (

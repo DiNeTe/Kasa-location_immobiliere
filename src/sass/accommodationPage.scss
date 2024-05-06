@@ -1,4 +1,4 @@
-@use './mixins.scss' as *;
+@use "./mixins.scss" as *;
 
 .acommodation-page {
   display: flex;
@@ -150,11 +150,10 @@
       }
       .title-collapse {
         min-width: 92px;
-        span{
-          @include respond-to(small)
-          {
-          font-size:13px;
-        }
+        span {
+          @include respond-to(small) {
+            font-size: 13px;
+          }
         }
       }
     }
@@ -170,17 +169,6 @@
       @include respond-to(medium) {
         margin-left: 0;
       }
-
-     
     }
   }
 }
-
-
-
-
-
-
-
-
-

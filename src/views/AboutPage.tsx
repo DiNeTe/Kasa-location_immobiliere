@@ -6,27 +6,27 @@ const AboutPage: React.FC = () => {
   return (
     <div className="about-page">
       <Banner
+        className="banner-about"
         imageSrc="../../public/Banner-about.jpg"
         imageAlt="Vue de la page À Propos"
-      >
-      </Banner>
+      ></Banner>
       <section className="collapse-container">
         <Collapse title="Fiabilité">
-          <p>
+          <p className="collapse-content-about">
             Les annonces postées sur Kasa garantissent une fiabilité totale. Les
             photos sont conformes aux logements, et toutes les informations sont
             régulièrement vérifiées par nos équipes.
           </p>
         </Collapse>
         <Collapse title="Respect">
-          <p>
+          <p className="collapse-content-about">
             La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
             comportement discriminatoire ou de perturbation du voisinage
             entraînera une exclusion de notre plateforme.
           </p>
         </Collapse>
         <Collapse title="Service">
-          <p>
+          <p className="collapse-content-about">
             La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
             comportement discriminatoire ou de perturbation du voisinage
             entraînera une exclusion de notre plateforme.
@@ -34,7 +34,7 @@ const AboutPage: React.FC = () => {
         </Collapse>
 
         <Collapse title="Sécurité">
-          <p>
+          <p className="collapse-content-about">
             La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
             pour les voyageurs, chaque logement correspond aux critères de
             sécurité établis par nos services. En laissant une note aussi bien à
