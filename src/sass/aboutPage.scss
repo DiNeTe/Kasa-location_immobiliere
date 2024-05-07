@@ -1,15 +1,24 @@
-@use './mixins.scss' as *;
+@use "./mixins.scss" as *;
 
 .collapse-container {
   margin: 38px 0;
-  @media (max-width: 955px) {
+  @include respond-to(medium) {
     margin: 20px 0;
   }
   p {
     margin: 0;
-  }}
-
-  .collapse-content-about {
-    padding: 1%;
-    margin: 0;
   }
+  .collapse-header {
+    @include respond-to(small) {
+      height: 30px;
+      font-size: 13px;
+    }
+  }
+}
+
+.collapse-content-about {
+  padding: 1%;
+  margin: 0;
+}
+
+// .collapse-header

@@ -8,8 +8,6 @@ const SlideShow: React.FC<SlideshowProps> = ({ images }) => {
   // variable d'état avec la valeur initiale définie à 0
   const [ImageIndex, setImageIndex] = useState(0);
 
-
-
   const goToPrevious = () => {
     setImageIndex((prevIndex) =>
       // Si l'indice actuel est supérieur à 0, l'indice diminu de 1, sinon retour à la dernière image du tableau, crée l'effet de boucle.
@@ -22,9 +20,6 @@ const SlideShow: React.FC<SlideshowProps> = ({ images }) => {
       // Si nextIndex + 1 = images.length, alors modulo = 0, crée l'effet de boucle.
       (nextIndex + 1) % images.length);
   };
-
-  console.log( ImageIndex+1, "/", images.length,);
-  
 
   return (
     <div className="slideshow-container">
