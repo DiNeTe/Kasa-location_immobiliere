@@ -11,7 +11,7 @@ const SlideShow: React.FC<SlideshowProps> = ({ images }) => {
   const goToPrevious = () => {
     setImageIndex((prevIndex) =>
       // Si l'indice actuel est supérieur à 0, l'indice diminu de 1, sinon retour à la dernière image du tableau, crée l'effet de boucle.
-      prevIndex > 0 ? prevIndex - 1 : images.length - 1
+      prevIndex > 0 ? prevIndex - 1 : images.length -1
     );
   };
 

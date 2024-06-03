@@ -7,6 +7,7 @@ import Collapse from "../components/Collapse";
 import Tag from "../components/Tag";
 import RatingStars from "../components/Rating";
 import SlideShow from "../components/SlideShow";
+
 import { useAppDependencies } from "../app/context";
 
 const AccommodationPage: React.FC = () => {

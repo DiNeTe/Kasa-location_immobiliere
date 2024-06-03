@@ -13,10 +13,12 @@ import App from "./components/App.tsx";
 const appDependencies: AppDependencies = {
   accommadationDataSource: fakeAccommodationDataSource,
 };
-
+// Initialisation app React en appelant ReactDOM
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    {/* Fournisseur de Contexte */}
     <AppDependenciesContext.Provider value={appDependencies}>
+    {/* Gestionnaire de Routage */}
       <BrowserRouter>
         <App />
       </BrowserRouter>

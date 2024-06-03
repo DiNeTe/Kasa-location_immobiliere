@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
     <div className="about-page">
       <Banner
         className="banner-about"
-        imageSrc="../../public/Banner-about.jpg"
+        imageSrc="/banner-about.jpg"
         imageAlt="Vue de la page À Propos"
       ></Banner>
       <section className="collapse-container">

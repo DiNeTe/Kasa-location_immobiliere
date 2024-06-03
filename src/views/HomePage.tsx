@@ -5,6 +5,7 @@ import { Accommodation } from "../data/Accomodation";
 
 import Card from "../components/Card";
 import Banner from "../components/Banner";
+
 import { useAppDependencies } from "../app/context";
 
 // logique du composant fonctionnel React
@@ -33,7 +34,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-page">
       <Banner
-        imageSrc="../../public/Banner.jpg"
+        imageSrc="/banner.jpg"
         imageAlt="Vue de la page d'accueil"
       >
         Chez vous, partout et ailleurs
